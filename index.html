@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <title>SITCON 審稿輔助系統</title>
+    <base target="_top">
+    <?!= include('styles.html'); ?>
+    <?!= include('scripts.html'); ?>
+  </head>
+  <body>
+    <main>
+      <h1 class="logo">SITCON 2021 審稿系統</h1>
+      <? var submissions = getSubmissions();
+      if (submissions) { ?>
+        <? for (var i = 0; i < submissions.length; i++) {
+          var submission = submissions[i]; ?>
+        <article class="submission" data-type="<?= submission.type ?>">
+          <h4 class="author"><?= submission.author ?></h4>
+          <h3 class="title"><?= submission.title ?></h3>
+          <ul class="keywords">
+            <? submission.keywords.forEach((k) => { ?><li><?= k ?></li><? }); ?>
+          </ul>
+          <p><?= submission.abstract ?></p>
+          <hr>
+          <details open>
+            <dl>
+              <? for (var label in Config.labels) { ?>
+              <dt><?= Config.labels[label] ?></dt>
+              <dd><?= submission[label] ?></dd>
+              <? } ?>
+            </dl>
+          </details>
+        </article>
+        <? } ?>
+      <? } else { ?>
+        <div class="message">
+          無法讀取稿件。請確認您議程組雲端硬碟的存取權限。
+        </div>
+      <? } ?>
+    </main>
+  </body>
+</html>

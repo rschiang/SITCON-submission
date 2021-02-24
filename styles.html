@@ -1,0 +1,106 @@
+<style>
+  /* Style reset */
+  html, body {
+    font-family: system-ui, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: auto;
+    line-height: 1.5;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+  }
+
+  hr {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: rgba(0,0,0,.2);
+  }
+
+  /* Layout */
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 42em;
+  }
+
+  .logo {
+    font-family: 'Nimbus Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .submission {
+    position: relative;
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #dadada;
+    border-radius: 1em;
+  }
+
+  .submission::before {
+    content: attr(data-type);
+    position: absolute;
+    display: block;
+    right: 1rem;
+    font-size: 0.75em;
+    color: rgba(0, 0, 0, .54);
+    text-transform: lowercase;
+  }
+
+  .submission[data-type="Espresso"] {
+    background: #bed0f6;
+  }
+
+  .submission[data-type="Presentation"] {
+    background: #ffefc1;
+  }
+
+  /* Submission information */
+  .title {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1.25em;
+  }
+
+  .author {
+    font-weight: normal;
+    font-size: .8em;
+  }
+
+  .keywords {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: .8em;
+  }
+
+  .keywords li {
+    display: inline-block;
+    margin: 0 .25em;
+    padding: .25em .75em;
+    border-radius: 1em;
+    background: rgba(0, 0, 0, .12);
+  }
+
+  .keywords li:first-child {
+    margin-left: 0;
+  }
+
+  dt {
+    font-weight: 600;
+    margin-top: .5em;
+  }
+
+  dd {
+    white-space: pre-wrap;
+  }
+
+  /* Misc */
+  .message {
+    margin: 1em;
+  }
+</style>

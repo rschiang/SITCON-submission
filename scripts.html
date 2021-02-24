@@ -1,0 +1,7 @@
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('dd').forEach((e) => {
+      e.innerHTML = e.textContent.replace(/https?:\/\/[a-zA-Z0-9\.\/\-_=%&\?\+@~#!:]+/g, '<a href="$&">$&</a>');
+    });
+  });
+</script>
